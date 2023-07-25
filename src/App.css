@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");.page_header__xMZ9j {
+  display: flex;
+  justify-content: center
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page_title__yhPp_ {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0;
+  font-family: Raleway,sans-serif
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page_main__ibFHK {
+  margin: 4rem 0
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page_menu{
+  display: flex;
+  justify-content: space-evenly
+}
+
+.page_menuOption__y4n_M {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer
 }
 
-.App-link {
-  color: #61dafb;
+.page_menuOption__y4n_M span {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1rem 0
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.page_underline__RzBSg {
+  width: 89px;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+  transition: .2s
+}
+div.TabMenu.hr{
+  fill: #eb2314;
+
+}
+.page_menuOption__y4n_M:hover>.page_underline__RzBSg {
+  background: #2f80ed
+}
+
+.page_underlineActive__VrwOT {
+  width: 89px;
+  height: 4px;
+  /* margin-top: 10px; */
+  border-radius: 4px 4px 0 0;
+  background: #2f80ed
+}
+.page_inputContainer__W4Zzc {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+  font-size: 14px
+}
+
+.page_input__MSOId {
+  color: #000;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #bdbdbd;
+  width: 80%;
+  padding: 1rem
+}
+
+.page_input__MSOId::placeholder {
+  color: #828282;
+  font-size: 14px
+}
+
+.page_addButton__Ty7ix {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: #2f80ed;
+  box-shadow: 0 2px 6px 0 rgba(127,177,243,.4);
+  width: 15%;
+  padding: 1rem 0;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: .2s
+}
+
+.page_addButton__Ty7ix:hover:enabled {
+  opacity: .7
+}
+
+.page_addButton__Ty7ix:disabled {
+  background: #2f80ed90;
+  cursor: not-allowed
+}
+@media screen and (max-width: 685px) {
+  .page_inputContainer__W4Zzc {
+      margin:1.5rem .5rem
   }
-  to {
-    transform: rotate(360deg);
+
+  .page_todoContainer__e31oL {
+      margin: 1rem .5rem
+  }
+}
+
+
+/* custom CSS */
+
+div.task{
+  background-color: none;
+  border-radius: 0px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  padding: 5px 9px;
+  align-items: center;
+}
+
+div.task svg{
+  margin-right: 6px;
+  height: 20px;
+  width: 25px;
+  fill: #61DAFB;
+  /* margin-top: 7px; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+div.task.done{
+  /* opacity: 50%; */
+  text-decoration: line-through;
+}
+div.task span{
+  position: relative;
+  flex-grow: 1;
+}
+div.task span:before{
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 10px;
+  transition: width .1s linear;
+}
+button.trash{
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+/* button.trash svg{
+  fill: aliceblue;
+  border-color: #201818;
+} */
+  main{
+    max-width: 700px;
+    margin: 30px auto;
+  }
+  .completed-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .completed-wrapper {
+    position: relative;
+  }
+
+.clearCompleted {
+  background-color: rgb(238, 139, 139);
+  border-radius: 5px;
+  padding: 5px 10px;
+  align-items: center;
+  margin-top: 5px;
+  text-align: center;
+  justify-content: end;
+  cursor: pointer;
+  } 
+  /* <<<<<<<<<< responsive ness of the website >>>>>>>>>>>>>>>>>>>> */
+@media screen and (max-width: 768px) {
+  main {
+    max-width: 90%; /* Reduce the max-width for smaller screens */
+  }
+  
+  .page_menu {
+    flex-direction: column; /* Stack the menu options vertically */
+  }
+
+  .page_menuOption__y4n_M {
+    margin-bottom: 10px; /* Add some space between the menu options */
+  }
+
+  .page_main__ibFHK {
+    margin: 2rem 0; /* Reduce the top and bottom margin */
+  }
+
+  .page_inputContainer__W4Zzc {
+    flex-direction: column; /* Stack the input and button vertically */
+    align-items: center;
+  }
+
+  .page_input__MSOId {
+    width: 100%; /* Take full width of the container */
+    margin-bottom: 10px; /* Add some space between input and button */
+  }
+
+  .page_addButton__Ty7ix {
+    width: 100%; /* Take full width of the container */
+    margin-left: 0; /* Remove the left margin */
+  }
+
+  /* Add media query for the completed tasks section */
+  .completed-container {
+    flex-direction: column; /* Stack the tasks and button vertically */
+  }
+
+  .completed-wrapper {
+    margin-top: 20px; /* Add some space between the tasks and button */
+  }
+
+  .clearCompleted {
+    justify-content: center; /* Center the button horizontally */
   }
 }
